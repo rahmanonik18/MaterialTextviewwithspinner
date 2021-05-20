@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpinnerTextview</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="selected_customer">Selected Customer</string>
+</resources>
