@@ -2,6 +2,7 @@ package com.opl.rahman.spinnertextview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -33,8 +34,21 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                if (customerAutoTV.getText().toString().equals(null)){
+                    Toast toast=Toast.makeText(getApplicationContext(),"Please select spinner Value",Toast.LENGTH_SHORT);
+                    toast.setMargin(50,50);
+                    toast.show();
+                }else{
+                    tv_mytextview.setText(customerAutoTV.getText().toString());
+                    tv_mytextview.setVisibility(View.GONE);
+                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                    i.putExtra("passedvalue", customerAutoTV.getText().toString());
+                    startActivity(i);
 
-                tv_mytextview.setText(customerAutoTV.getText().toString());
+
+                }
+
+
 
             }
         });
